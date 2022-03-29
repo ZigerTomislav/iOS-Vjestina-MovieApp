@@ -3,6 +3,7 @@ build
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 !*.xcworkspace/contents.xcworkspacedata
+*.xcuserstate
 ### Objective-C ###
 # OS X
 .DS_Store
