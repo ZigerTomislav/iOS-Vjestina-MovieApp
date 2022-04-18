@@ -73,6 +73,7 @@ class MovieDetailsViewController: UIViewController {
         imageView.addSubview(button)
         
         button.setImage(UIImage(systemName: "star"), for: .normal)
+        //button.setIma
         button.backgroundColor = .darkGray
         button.layer.cornerRadius = buttonSize.width/2
         button.clipsToBounds = true

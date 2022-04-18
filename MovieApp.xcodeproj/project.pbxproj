@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		790EA67127F30883003F44E2 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790EA67027F30883003F44E2 /* MovieDetailsViewController.swift */; };
 		790EA67427F3355B003F44E2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 790EA67327F3355B003F44E2 /* SnapKit */; };
+		790EA67A27FC35E2003F44E2 /* MovieAppData in Frameworks */ = {isa = PBXBuildFile; productRef = 790EA67927FC35E2003F44E2 /* MovieAppData */; };
+		790EA67C27FC3615003F44E2 /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790EA67B27FC3615003F44E2 /* MovieListViewController.swift */; };
+		790EA67E27FC3D64003F44E2 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790EA67D27FC3D64003F44E2 /* SearchBarView.swift */; };
+		790EA68027FC3D7F003F44E2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790EA67F27FC3D7F003F44E2 /* SearchViewController.swift */; };
+		790EA68227FC3D97003F44E2 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790EA68127FC3D97003F44E2 /* FavoritesViewController.swift */; };
+		790EA68427FC3DE7003F44E2 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790EA68327FC3DE7003F44E2 /* FilterTableViewCell.swift */; };
+		790EA68627FC3DFA003F44E2 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790EA68527FC3DFA003F44E2 /* MovieCollectionViewCell.swift */; };
+		790EA68827FC3E0E003F44E2 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790EA68727FC3E0E003F44E2 /* SearchTableViewCell.swift */; };
+		790EA68A280D85C6003F44E2 /* buttonStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790EA689280D85C5003F44E2 /* buttonStackView.swift */; };
+		790EA68E280DE045003F44E2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790EA68D280DE045003F44E2 /* Extensions.swift */; };
 		793F350427F2310D00C9CD33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793F350327F2310D00C9CD33 /* AppDelegate.swift */; };
 		793F350627F2310D00C9CD33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793F350527F2310D00C9CD33 /* SceneDelegate.swift */; };
 		793F350D27F2310F00C9CD33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 793F350C27F2310F00C9CD33 /* Assets.xcassets */; };
@@ -17,6 +27,15 @@
 
 /* Begin PBXFileReference section */
 		790EA67027F30883003F44E2 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
+		790EA67B27FC3615003F44E2 /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
+		790EA67D27FC3D64003F44E2 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		790EA67F27FC3D7F003F44E2 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		790EA68127FC3D97003F44E2 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		790EA68327FC3DE7003F44E2 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
+		790EA68527FC3DFA003F44E2 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		790EA68727FC3E0E003F44E2 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		790EA689280D85C5003F44E2 /* buttonStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonStackView.swift; sourceTree = "<group>"; };
+		790EA68D280DE045003F44E2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		793F350027F2310D00C9CD33 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		793F350327F2310D00C9CD33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		793F350527F2310D00C9CD33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,15 +50,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				790EA67427F3355B003F44E2 /* SnapKit in Frameworks */,
+				790EA67A27FC35E2003F44E2 /* MovieAppData in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		790EA68B280DDF21003F44E2 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				790EA67F27FC3D7F003F44E2 /* SearchViewController.swift */,
+				790EA67D27FC3D64003F44E2 /* SearchBarView.swift */,
+				790EA68727FC3E0E003F44E2 /* SearchTableViewCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		790EA68C280DDF6A003F44E2 /* MovieFilters */ = {
+			isa = PBXGroup;
+			children = (
+				790EA67027F30883003F44E2 /* MovieDetailsViewController.swift */,
+				790EA67B27FC3615003F44E2 /* MovieListViewController.swift */,
+				790EA68127FC3D97003F44E2 /* FavoritesViewController.swift */,
+				790EA68327FC3DE7003F44E2 /* FilterTableViewCell.swift */,
+				790EA68527FC3DFA003F44E2 /* MovieCollectionViewCell.swift */,
+				790EA68D280DE045003F44E2 /* Extensions.swift */,
+			);
+			path = MovieFilters;
+			sourceTree = "<group>";
+		};
 		793F34F727F2310C00C9CD33 = {
 			isa = PBXGroup;
 			children = (
+				790EA689280D85C5003F44E2 /* buttonStackView.swift */,
 				793F350227F2310D00C9CD33 /* MovieApp */,
 				793F350127F2310D00C9CD33 /* Products */,
 			);
@@ -56,7 +100,8 @@
 		793F350227F2310D00C9CD33 /* MovieApp */ = {
 			isa = PBXGroup;
 			children = (
-				790EA67027F30883003F44E2 /* MovieDetailsViewController.swift */,
+				790EA68C280DDF6A003F44E2 /* MovieFilters */,
+				790EA68B280DDF21003F44E2 /* Search */,
 				793F350327F2310D00C9CD33 /* AppDelegate.swift */,
 				793F350527F2310D00C9CD33 /* SceneDelegate.swift */,
 				793F350C27F2310F00C9CD33 /* Assets.xcassets */,
@@ -84,6 +129,7 @@
 			name = MovieApp;
 			packageProductDependencies = (
 				790EA67327F3355B003F44E2 /* SnapKit */,
+				790EA67927FC35E2003F44E2 /* MovieAppData */,
 			);
 			productName = MovieApp;
 			productReference = 793F350027F2310D00C9CD33 /* MovieApp.app */;
@@ -115,6 +161,7 @@
 			mainGroup = 793F34F727F2310C00C9CD33;
 			packageReferences = (
 				790EA67227F3355B003F44E2 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				790EA67827FC35E2003F44E2 /* XCRemoteSwiftPackageReference "MovieAppData" */,
 			);
 			productRefGroup = 793F350127F2310D00C9CD33 /* Products */;
 			projectDirPath = "";
@@ -142,9 +189,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				790EA68027FC3D7F003F44E2 /* SearchViewController.swift in Sources */,
+				790EA67E27FC3D64003F44E2 /* SearchBarView.swift in Sources */,
+				790EA68227FC3D97003F44E2 /* FavoritesViewController.swift in Sources */,
 				790EA67127F30883003F44E2 /* MovieDetailsViewController.swift in Sources */,
 				793F350427F2310D00C9CD33 /* AppDelegate.swift in Sources */,
+				790EA68A280D85C6003F44E2 /* buttonStackView.swift in Sources */,
+				790EA68427FC3DE7003F44E2 /* FilterTableViewCell.swift in Sources */,
+				790EA68E280DE045003F44E2 /* Extensions.swift in Sources */,
+				790EA68627FC3DFA003F44E2 /* MovieCollectionViewCell.swift in Sources */,
 				793F350627F2310D00C9CD33 /* SceneDelegate.swift in Sources */,
+				790EA67C27FC3615003F44E2 /* MovieListViewController.swift in Sources */,
+				790EA68827FC3E0E003F44E2 /* SearchTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +418,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		790EA67827FC35E2003F44E2 /* XCRemoteSwiftPackageReference "MovieAppData" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fiveagency/MovieAppData.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -369,6 +433,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 790EA67227F3355B003F44E2 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		790EA67927FC35E2003F44E2 /* MovieAppData */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 790EA67827FC35E2003F44E2 /* XCRemoteSwiftPackageReference "MovieAppData" */;
+			productName = MovieAppData;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
