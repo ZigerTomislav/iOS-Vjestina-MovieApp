@@ -40,14 +40,14 @@ class MovieDetailsViewController: UIViewController {
     var labelRightUp1: UILabel!
     var labelRightDown1: UILabel!
     var id: Int
-    var details: MovieDetailData
+    var details: MovieDetailData!
 //    let imgHeight = 500
     let buttonSize = CGSize(width: 32, height: 32)
     
     init(id: Int){
         self.id = id
-        self.details = MovieDetailData(id:self.id)
-        
+        self.details = MovieDetailData(id : id)
+        self.details.pokretac()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -66,8 +66,9 @@ class MovieDetailsViewController: UIViewController {
         let fontSize = 18.0
        
         
-//        gornji dio
-        print(self.details.detail)
+//              print(self.details.detail!)
+        
+//        ovdje sam zapeo
         details.detail?.poster_path
         imageView.image = UIImage(url: URL(string:"https://image.tmdb.org/t/p/original"+self.details.detail!.poster_path))
         
