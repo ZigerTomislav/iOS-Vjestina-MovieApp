@@ -39,11 +39,15 @@ class MovieDetailsViewController: UIViewController {
     var labelLeftDown1: UILabel!
     var labelRightUp1: UILabel!
     var labelRightDown1: UILabel!
-    
+    var id: Int
+    var details: MovieDetailData
 //    let imgHeight = 500
     let buttonSize = CGSize(width: 32, height: 32)
     
-    init(){
+    init(id: Int){
+        self.id = id
+        self.details = MovieDetailData(id:self.id)
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -63,8 +67,10 @@ class MovieDetailsViewController: UIViewController {
        
         
 //        gornji dio
+        print(self.details.detail)
+        details.detail?.poster_path
+        imageView.image = UIImage(url: URL(string:"https://image.tmdb.org/t/p/original"+self.details.detail!.poster_path))
         
-        imageView = UIImageView(image: UIImage(named:"godfather"))
         view.addSubview(imageView)
         
         imageView.contentMode = .scaleAspectFill

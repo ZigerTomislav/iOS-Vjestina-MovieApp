@@ -25,6 +25,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         search.txtField.becomeFirstResponder()
         view.backgroundColor = .white
         view.addSubview(search)

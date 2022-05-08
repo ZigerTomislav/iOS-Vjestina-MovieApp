@@ -12,6 +12,9 @@ import SnapKit
 class MovieCollectionViewCell : UICollectionViewCell{
     let img = UIImageView()
     let buttonH = UIButton()
+    var id = Int()
+    weak var navigationController: UINavigationController?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -36,6 +39,9 @@ class MovieCollectionViewCell : UICollectionViewCell{
         buttonH.layer.cornerRadius = 20/2
         
         img.addSubview(buttonH)
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        img.isUserInteractionEnabled = true
+        img.addGestureRecognizer(tapGestureRecognizer)
         
         self.addSubview(img)
         buttonH.snp.makeConstraints(){
@@ -46,6 +52,14 @@ class MovieCollectionViewCell : UICollectionViewCell{
             $0.leading.trailing.bottom.top.equalToSuperview()
             
         }
+        
       }
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        let vc1 = MovieDetailsViewController(id: self.id)
+        self.navigationController?.pushViewController(vc1, animated: true)
+        print("radi")
+    }
 }
 

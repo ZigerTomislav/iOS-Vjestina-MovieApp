@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import MovieAppData
 
-class MovieListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MovieListViewController:  UIViewController, UITableViewDelegate, UITableViewDataSource {
     let search = SearchBarView()
     let myTableView = UITableView()
     var myArray = [MovieModel]()
@@ -21,10 +21,26 @@ class MovieListViewController: UIViewController, UITableViewDelegate, UITableVie
     var groupArray = Array<MovieGroup>()
     var filteri = [[MovieFilter]]()
     let pocetno = true
+    var movieData1 = MovieData()
+   public var popular = [moviePopular]()
+//    var popular = [moviePopular]()
+    var trendingDay = [moviePopular]()
+    var trendingWeek = [moviePopular]()
+    var topRated = [moviePopular]()
+    var recommended = [moviePopular]()
+    let net = NetworkService()
+    
+    
+    
+    var g = [genre]()
+    var titles = ["Whats Popular", "Trending", "Recommended", "TopRated"]
+    var time = ["week","day"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        view.backgroundColor = .white
+        
+        movieData1.sve = [movieData1.popular,movieData1.recommended,movieData1.topRated,movieData1.trendingWeek]
+        view.backgroundColor = .white   
         view.addSubview(search)
         
         let titleLabel = UILabel()
@@ -62,7 +78,6 @@ class MovieListViewController: UIViewController, UITableViewDelegate, UITableVie
             .forEach {groupSet.insert($0)
             }
         groupArray = Array(groupSet)
-        
         for grupa in groupArray{
             var MovieFilters = grupa.filters
             filteri.insert(MovieFilters, at: 0)
@@ -111,7 +126,7 @@ class MovieListViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return groupSet.count
+        return 4
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -123,21 +138,18 @@ class MovieListViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FilterTableViewCell
         
         cell.backgroundColor = UIColor.clear
-            cell.label.text = String(describing: groupArray[indexPath.row])
-            cell.myArray = myArray2[indexPath.row]
-            cell.grupa = String(describing: groupArray[indexPath.row])
-            if(groupArray[indexPath.row].filters==cell.filterici){
-            }
-            else{
-                for i in groupArray[indexPath.row].filters{
-                    var pom = buttonStackView()
+        cell.label.text = String(describing: movieData1.titles[indexPath.row])
+            cell.rezultati = movieData1.sve[indexPath.row]
+             cell.navigationController = navigationController
+        for i in movieData1.g{
+                    let pom = buttonStackView()
                     pom.parent = cell.stackView
                     pom.parentKolekcija = cell
-                    pom.setTitle(String(describing: i), for: .normal)
+                    pom.setTitle(String(describing: i.name), for: .normal)
                     cell.stackView.addArrangedSubview(pom)
                     }
-            }
-            cell.filterici = groupArray[indexPath.row].filters
+//            }
+            cell.filterici = movieData1.g
     return cell
     }
     

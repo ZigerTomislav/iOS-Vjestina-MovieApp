@@ -11,12 +11,16 @@ import SnapKit
 import MovieAppData
 extension FilterTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return myArray.count
+        return rezultati.count
         }
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customReuseIdentifier", for: indexPath) as! MovieCollectionViewCell
-            cell.img.image = UIImage(url: URL(string:myArray [indexPath.row].imageUrl))
+        cell.img.image = UIImage(url: URL(string:"https://image.tmdb.org/t/p/original"+rezultati[indexPath.row].poster_path))
+        
+        cell.id = rezultati[indexPath.row].id
+        cell.navigationController = navigationController
+            
         return cell
         }
     func collectionView(_ collectionView: UICollectionView, heightForRowAt indexPath: IndexPath) -> CGFloat

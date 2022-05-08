@@ -14,9 +14,12 @@ public class FilterTableViewCell : UITableViewCell{
     var stackView = UIStackView()
     var scrollView = UIScrollView()
     var grupa: String = ""
+    var movies = [moviePopular]()
     var myCollectionView: UICollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
     var myArray = [MovieModel]()
-    var filterici = [MovieFilter]()
+    var rezultati = [moviePopular]()
+    weak var navigationController: UINavigationController?
+    var filterici = [genre]()
     let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
     var trenutni = ""
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String!) {
