@@ -64,14 +64,11 @@ class MovieDetailsViewController: UIViewController {
     }
     func buildViews(){
         let fontSize = 18.0
-       
-        
-//              print(self.details.detail!)
-        
-//        ovdje sam zapeo
-        details.detail?.poster_path
-        imageView.image = UIImage(url: URL(string:"https://image.tmdb.org/t/p/original"+self.details.detail!.poster_path))
-        
+        imageView = UIImageView()
+        if let posterPath = self.details.detail?.poster_path{
+            imageView.image = UIImage(url: URL(string:"https://image.tmdb.org/t/p/original" + posterPath))
+        }
+            
         view.addSubview(imageView)
         
         imageView.contentMode = .scaleAspectFill
