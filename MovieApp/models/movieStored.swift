@@ -1,18 +1,19 @@
 //
-//  moviePopular.swift
+//  movieStored.swift
 //  MovieApp
 //
-//  Created by Tomislav Žiger  on 07.05.2022..
+//  Created by Tomislav Žiger  on 29.05.2022..
 //
 
 import Foundation
 
-struct moviePopular : Codable{
+struct movieStored : Codable{
 //    let adult: Bool
 //    let backdrop_path: String
 //    let genre_ids: [Int]
     let id: Int32
-//    let favorite: Bool
+    let favorite: Bool
+    let img: Data?
 //    let original_language: String
 //    let original_title: String
 //    let overview: String
@@ -27,6 +28,7 @@ struct moviePopular : Codable{
         self.id = model.id
         self.title = model.title!
         self.poster_path = model.poster_path!
-        
+        self.favorite = model.favorite
+        self.img = model.img
     }
 }

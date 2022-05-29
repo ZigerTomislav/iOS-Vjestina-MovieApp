@@ -40,7 +40,8 @@ class MovieListViewController:  UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         
         movieData1.sve = [movieData1.popular,movieData1.recommended,movieData1.topRated,movieData1.trendingWeek]
-        view.backgroundColor = .white   
+        movieData1.tab = myTableView
+        view.backgroundColor = .white
         view.addSubview(search)
         
         let titleLabel = UILabel()
@@ -72,22 +73,7 @@ class MovieListViewController:  UIViewController, UITableViewDelegate, UITableVi
         
         
         search.txtField.addTarget(self, action: #selector(begin), for: .editingDidBegin)
-        movies
-            .map{$0.group}
-            .flatMap{$0}
-            .forEach {groupSet.insert($0)
-            }
-        groupArray = Array(groupSet)
-        for grupa in groupArray{
-            var MovieFilters = grupa.filters
-            filteri.insert(MovieFilters, at: 0)
-            let hasGroup = movies
-                .filter{$0.group.contains(grupa)}
-                
-            myArray = hasGroup
-            //        
-            myArray2.insert(myArray, at: 0)
-        }
+        
 }
     @objc func begin() {
         search.txtField.text = ""

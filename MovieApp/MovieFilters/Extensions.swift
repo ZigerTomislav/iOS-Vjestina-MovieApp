@@ -18,7 +18,7 @@ extension FilterTableViewCell: UICollectionViewDataSource, UICollectionViewDeleg
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "customReuseIdentifier", for: indexPath) as! MovieCollectionViewCell
         cell.img.image = UIImage(url: URL(string:"https://image.tmdb.org/t/p/original"+rezultati[indexPath.row].poster_path))
         
-        cell.id = rezultati[indexPath.row].id
+        cell.id = Int(rezultati[indexPath.row].id)
         cell.navigationController = navigationController
             
         return cell

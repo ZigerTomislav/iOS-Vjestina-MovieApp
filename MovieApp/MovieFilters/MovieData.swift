@@ -7,6 +7,7 @@
 
 import Foundation
 import Network
+import UIKit
 
 class MovieData {
     var popular = [moviePopular]()
@@ -16,6 +17,7 @@ class MovieData {
     var recommended = [moviePopular]()
     let net = NetworkService()
     var sve = [[moviePopular]]()
+    var tab = UITableView()
     
     
     var g = [genre]()
@@ -120,6 +122,9 @@ class MovieData {
     func pokretac(){
         Task{
             await getAll()
+            
         }
+        
+        tab.reloadData()
     }
 }
